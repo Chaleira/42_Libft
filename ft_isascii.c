@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 23:02:38 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/25 23:10:00 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/25 23:07:43 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/25 23:09:44 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_isalnum(char a)
+void	ft_isascii(char a)
 {
-	if (a >= 65 && a <= 90)
-		write(1, "1\n", 2);
-	else if (a >= 97 && a <= 122)
-		write(1, "1\n", 2);
-	else if (a >= 48 && a <= 57)
+	if (a >= 0 && a <= 127)
 		write(1, "1\n", 2);
 	else
 		write(1, "0\n", 2);
@@ -26,7 +22,7 @@ void	ft_isalnum(char a)
 /*
 int	main(void)
 {
-	ft_isalnum('.');
+	ft_isascii(-1);
 	return (0);
 }
 */
