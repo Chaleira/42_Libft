@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 20:34:47 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/25 22:57:16 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/25 22:13:11 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/25 23:00:07 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_isalpha(char a)
+void	ft_isdigit(char a)
 {
-	if (a >= 65 && a <= 90)
-		write(1, "1\n", 2);
-	else if (a >= 97 && a <= 122)
+	if (a >= 48 && a <= 57)
 		write(1, "1\n", 2);
 	else
 		write(1, "0\n", 2);
@@ -24,7 +22,8 @@ void	ft_isalpha(char a)
 /*
 int	main(void)
 {
-	ft_isalpha('a');
+	ft_isdigit('0');
 	return (0);
 }
 */
+//alias cr='f(){ gcc -Wall -Wextra -Werror "$@" && ./a.out}; f'
