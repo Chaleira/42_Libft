@@ -6,11 +6,12 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 02:29:12 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 23:35:11 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:15:33 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -41,12 +42,10 @@ int	main(void)
 int	main(void)
 {
 	char	str[] = "abcdefg";
-	char	str2[] = "1234567";
+	char	str2[] = "123456";
 
 	memmove (str + 2, str, 6);
 	puts (str);
-	printf("%p\n", &str[7]);
-	printf("%p\n", &str2[7]);
 	ft_memcpy (str2 + 2, str2, 4);
 	puts (str2);
 }
