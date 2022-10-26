@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:54:19 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 17:03:49 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 19:27:36 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 20:30:15 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
-void	*ft_bzero(void *s, int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t size)
 {
-	char	*p;
-	int		i;
+	int	n;
 
-	p = s;
-	i = 0;
-	while (n > i)
+	n = 0;
+	while ((s2[n] != '\0' || s1[n] != '\0') && size > 0)
 	{
-		p[i] = '\0';
-		i++;
+		if (s1[n] > s2[n])
+			return (1);
+		if (s1[n] < s2[n])
+			return (-1);
+		n++;
+		size--;
 	}
-	return (s);
+	return (0);
 }
 /*
 int	main(void)
 {
-	char	buffer[100];
+	char	src1[] = "lisb";
+	char	src2[] = "lisboa";
 
-	ft_bzero(buffer, 20);
-	printf("%d\n", buffer[5]);
+	printf("%d\n", ft_strncmp(src1, src2, 5));
 }
 */

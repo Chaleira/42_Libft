@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:54:19 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 17:03:49 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 20:32:44 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 21:47:14 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
-void	*ft_bzero(void *s, int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*p;
-	int		i;
+	int	i;
 
-	p = s;
 	i = 0;
-	while (n > i)
+	while (((unsigned char *)s)[i] != '\0' && n > 0)
 	{
-		p[i] = '\0';
+		if (((unsigned char *)s)[i] == c)
+			return (&((unsigned char *)s)[i]);
 		i++;
+		n--;
 	}
-	return (s);
+	return ('\0');
 }
 /*
 int	main(void)
 {
-	char	buffer[100];
+	char	s[] = "lisboa";
+	int		c;
 
-	ft_bzero(buffer, 20);
-	printf("%d\n", buffer[5]);
+	c = 'j';
+	puts(ft_memchr(s, c, 6));
+	return (0);
 }
 */

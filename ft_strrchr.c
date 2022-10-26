@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 20:25:01 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 04:43:41 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 18:45:37 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 19:25:38 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
-char	*ft_strcpy(char *src, char *dest)
+
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+	while (((char *)s)[i] != '\0')
 		i++;
+	while (((char *)s)[0])
+	{
+		if (c == ((char *)s)[i])
+		{
+			return (&((char *)s)[i]);
+		}
+		i--;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (((char *)s));
 }
 /*
-int main()
+int	main(void)
 {
-    char src[] = "chupamos cabron pedejo hij de um pinche";
-    char dest[1];
-    ft_strcpy(src, dest);
-    printf("%s\n", dest);
+	char	src[] = "abqqqqcdefqqqghijqqqklmnopqarstquvxz";
+	char	d;
+
+	d = 'q';
+	printf("%s\n", ft_strchr(src, d));
 }
 */

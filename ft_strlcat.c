@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:54:19 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 17:03:49 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 16:35:49 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 16:43:49 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
-void	*ft_bzero(void *s, int n)
+void	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*p;
-	int		i;
+	int	i;
+	int	n;
 
-	p = s;
 	i = 0;
-	while (n > i)
-	{
-		p[i] = '\0';
+	while (dst[i] != '\0')
 		i++;
+	while (src[n] != '\0' && size > 0)
+	{
+		dst[i] = src[n];
+		i++;
+		n++;
+		size--;
 	}
-	return (s);
+	dst[i] = '\0';
 }
 /*
 int	main(void)
 {
-	char	buffer[100];
+	char	src[] = "abcdefghijklmnopqrstuvxz";
+	char	dest[] = "12345";
 
-	ft_bzero(buffer, 20);
-	printf("%d\n", buffer[5]);
+	ft_strlcat(dest, src, sizeof(char) * 4);
+	printf("%s\n", dest);
 }
 */

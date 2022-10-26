@@ -1,37 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:54:19 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 17:03:49 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 22:13:20 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 22:13:21 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-void	*ft_bzero(void *s, int n)
-{
-	char	*p;
-	int		i;
-
-	p = s;
-	i = 0;
-	while (n > i)
-	{
-		p[i] = '\0';
-		i++;
-	}
-	return (s);
-}
-/*
-int	main(void)
-{
-	char	buffer[100];
-
-	ft_bzero(buffer, 20);
-	printf("%d\n", buffer[5]);
-}
-*/

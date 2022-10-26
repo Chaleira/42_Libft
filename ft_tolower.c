@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:54:19 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 17:03:49 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 16:56:59 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 17:00:01 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	*ft_bzero(void *s, int n)
+int	ft_toupper(int c)
 {
-	char	*p;
-	int		i;
-
-	p = s;
-	i = 0;
-	while (n > i)
-	{
-		p[i] = '\0';
-		i++;
-	}
-	return (s);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }
 /*
 int	main(void)
 {
-	char	buffer[100];
-
-	ft_bzero(buffer, 20);
-	printf("%d\n", buffer[5]);
+	printf("%c\n", ft_toupper('@'));
+	return (0);
 }
 */

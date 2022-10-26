@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 03:54:19 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 17:03:49 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/10/26 17:05:53 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/10/26 18:34:02 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	*ft_bzero(void *s, int n)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*p;
 	int		i;
 
-	p = s;
 	i = 0;
-	while (n > i)
+	while (((char *)s)[i] != '\0')
 	{
-		p[i] = '\0';
+		if (c == ((char *)s)[i])
+		{
+			return (&((char *)s)[i]);
+		}
 		i++;
 	}
-	return (s);
+	return (((char *)s));
 }
 /*
 int	main(void)
 {
-	char	buffer[100];
+	char	src[] = "abcdefghijklmnopqrstuvxz";
+	char	d;
 
-	ft_bzero(buffer, 20);
-	printf("%d\n", buffer[5]);
+	d = '0';
+	printf("%s\n", ft_strchr(src, d));
 }
 */
