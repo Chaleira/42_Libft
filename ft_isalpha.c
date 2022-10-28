@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:34:47 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/27 20:28:31 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 20:55:46 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,9 @@
 
 int	ft_isalpha(char a)
 {
-	if (a >= 65 && a <= 90)
+	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+	{
 		return (1);
-	else if (a >= 97 && a <= 122)
-		return (1);
-	else
-		return (0);
-}
-/*
-int	main(void)
-{
-	ft_isalpha('a');
+	}
 	return (0);
 }
-*/

@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:07:46 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/28 01:05:19 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 18:48:50 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 int		ft_atoi(const char *nptr);
 void	*ft_bzero(void *s, int n);
+void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(char a);
 int		ft_isalpha(char a);
 int		ft_isascii(char a);
@@ -31,6 +32,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, int n);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, unsigned long int size);
 int		ft_strlen(char *str);
