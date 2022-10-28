@@ -6,28 +6,29 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:35:49 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 16:43:49 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:56:02 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	n;
+	size_t		n;
+	size_t		dstlen;
 
-	i = 0;
-	while (dst[i] != '\0')
-		i++;
-	while (src[n] != '\0' && size > 0)
+	n = 0;
+	dstlen = ft_strlen(dst);
+	if (size <= dstlen)
+		return (ft_strlen((char *)src) + size);
+	while (src[n] && size - dstlen - 1 > 0)
 	{
-		dst[i] = src[n];
-		i++;
+		dst[dstlen + n] = src[n];
 		n++;
 		size--;
 	}
-	dst[i] = '\0';
+	dst[dstlen + n] = '\0';
+	return (dstlen + ft_strlen((char *)src));
 }
 /*
 int	main(void)

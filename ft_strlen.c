@@ -6,11 +6,12 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:25:53 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 04:43:36 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:18:55 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
+
 int	ft_strlen(char *str)
 {
 	int	i;

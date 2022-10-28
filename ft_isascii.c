@@ -6,18 +6,18 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:07:43 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/25 23:09:44 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:31:15 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_isascii(char a)
+int	ft_isascii(char a)
 {
-	if (a >= 0 && a <= 127)
-		write(1, "1\n", 2);
+	if (a >= 0)
+		return (1);
 	else
-		write(1, "0\n", 2);
+		return (0);
 }
 /*
 int	main(void)

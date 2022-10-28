@@ -6,13 +6,13 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 22:13:20 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 20:28:18 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 01:07:06 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*strnstr(const char	*big, const char *little, size_t len)
+char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
 	int	i;
 	int	n;
@@ -34,9 +34,9 @@ char	*strnstr(const char	*big, const char *little, size_t len)
 		i++;
 		len--;
 	}
-	return ('\0');
+	return (NULL);
 }
-/*
+/* 
 int	main(void)
 {
 	char	str[] = "Lisboakjf,jshfisjsdboa";
@@ -45,4 +45,4 @@ int	main(void)
 	puts(strnstr(str, str2, 2));
 	return (0);
 }
-*/
+ */

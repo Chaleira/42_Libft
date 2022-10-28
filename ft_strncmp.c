@@ -6,22 +6,22 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:27:36 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 20:30:15 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 23:21:04 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t size)
 {
 	int	n;
 
 	n = 0;
-	while ((s2[n] != '\0' || s1[n] != '\0') && size > 0)
+	while ((((unsigned char *)s1)[n] || ((unsigned char *)s2)[n]) && size > 0)
 	{
-		if (s1[n] > s2[n])
+		if ((((unsigned char *)s1)[n]) > (((unsigned char *)s2)[n]))
 			return (1);
-		if (s1[n] < s2[n])
+		if ((((unsigned char *)s1)[n]) < (((unsigned char *)s2)[n]))
 			return (-1);
 		n++;
 		size--;

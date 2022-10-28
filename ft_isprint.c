@@ -6,20 +6,18 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:11:56 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/25 23:19:23 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:06:21 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_isprint(char a)
+int	ft_isprint(char a)
 {
-	if (a >= 32 && a <= 127)
-		write(1, "1\n", 2);
-	else if (a >= 97 && a <= 122)
-		write(1, "1\n", 2);
+	if (a >= 32 && a < 127)
+		return (1);
 	else
-		write(1, "0\n", 2);
+		return (0);
 }
 /*
 int	main(void)

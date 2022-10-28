@@ -6,29 +6,30 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 04:05:43 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 04:44:17 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 21:05:49 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
-	char		*t;
-	int			i;
+	char		t[100];
+	size_t		i;
 
-	t = dest;
-	s = src;
 	i = 0;
 	while (n > i)
 	{
-		t[i] = s[i];
+		t[i] = ((char *)src)[i];
 		i++;
 	}
-	d = t;
-	return (d);
+	i = 0;
+	while (n > i)
+	{
+		((char *)dest)[i] = t[i];
+		i++;
+	}
+	return (dest);
 }
 /*
 int	main(void)
@@ -40,3 +41,9 @@ int	main(void)
 	printf("%d\n", dest[5]);
 }
 */
+/*	while (n > i)
+	{
+		t[i] = ((char *)src)[i];
+		i++;
+	}
+	i = 0;*/

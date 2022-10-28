@@ -6,11 +6,11 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 21:50:27 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 22:10:55 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:18:26 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

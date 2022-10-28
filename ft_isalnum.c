@@ -6,22 +6,22 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:02:38 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 04:43:10 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:28:04 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_isalnum(char a)
+int	ft_isalnum(char a)
 {
 	if (a >= 65 && a <= 90)
-		write(1, "1\n", 2);
+		return (1);
 	else if (a >= 97 && a <= 122)
-		write(1, "1\n", 2);
+		return (1);
 	else if (a >= 48 && a <= 57)
-		write(1, "1\n", 2);
+		return (1);
 	else
-		write(1, "0\n", 2);
+		return (0);
 }
 /*
 int	main(void)

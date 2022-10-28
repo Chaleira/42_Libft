@@ -6,20 +6,20 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:34:47 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 04:43:14 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:28:31 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_isalpha(char a)
+int	ft_isalpha(char a)
 {
 	if (a >= 65 && a <= 90)
-		write(1, "1\n", 2);
+		return (1);
 	else if (a >= 97 && a <= 122)
-		write(1, "1\n", 2);
+		return (1);
 	else
-		write(1, "0\n", 2);
+		return (0);
 }
 /*
 int	main(void)

@@ -6,13 +6,13 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:56:59 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 17:00:01 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:19:11 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;
@@ -21,7 +21,7 @@ int	ft_toupper(int c)
 /*
 int	main(void)
 {
-	printf("%c\n", ft_toupper('@'));
+	printf("%c\n", ft_tolower('@'));
 	return (0);
 }
 */

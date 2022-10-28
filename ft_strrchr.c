@@ -6,36 +6,36 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:45:37 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/26 19:25:38 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:58:58 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 
-	i = 0;
-	while (((char *)s)[i] != '\0')
-		i++;
-	while (((char *)s)[0])
+	i = ft_strlen((char *)s) - 1;
+	if (c == '\0')
+		return ((char *)&s[i + 1]);
+	while (i >= 0)
 	{
-		if (c == ((char *)s)[i])
+		if ((char)c == (s[i]))
 		{
-			return (&((char *)s)[i]);
+			return ((char *)&s[i]);
 		}
 		i--;
 	}
-	return (((char *)s));
+	return (NULL);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
-	char	src[] = "abqqqqcdefqqqghijqqqklmnopqarstquvxz";
+	 const char	src[] = "abqqqqcdefqqqghijqqqklmnopqarsquvxz";
 	char	d;
 
-	d = 'q';
-	printf("%s\n", ft_strchr(src, d));
+	d = 't';
+	printf("%s\n", ft_strrchr(src, d));
 }
-*/
+ */

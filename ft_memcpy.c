@@ -6,12 +6,11 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 02:29:12 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/26 19:15:33 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:18:33 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
