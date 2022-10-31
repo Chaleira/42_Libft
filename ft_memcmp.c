@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 21:50:27 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/27 19:18:26 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 23:53:21 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	int	i;
 
 	i = 0;
-	while (((((unsigned char *)s2)[i]) != '\0'
-		|| (((unsigned char *)s1)[i]) != '\0') && n > 0)
+	while (n > 0)
 	{
 		if ((((unsigned char *)s1)[i]) > (((unsigned char *)s2)[i]))
 			return (1);

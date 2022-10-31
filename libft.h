@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:07:46 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/28 18:48:50 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 23:57:45 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(char a);
 int		ft_isalpha(char a);
 int		ft_isascii(char a);
-int		ft_isdigit(char a);
+int		ft_isdigit(char c);
 int		ft_isprint(char a);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);

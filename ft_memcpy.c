@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 02:29:12 by chaleirag14       #+#    #+#             */
-/*   Updated: 2022/10/27 19:18:33 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/10/28 23:40:20 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned long int	i;
 
 	i = 0;
+	if (!dest && !src)
+		return (NULL);
 	while (n > i)
 	{
 		((char *)dest)[i] = ((char *)src)[i];
