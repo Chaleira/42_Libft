@@ -6,13 +6,13 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:02:38 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/27 20:28:04 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:26:51 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char a)
+int	ft_isalnum(int a)
 {
 	if (a >= 65 && a <= 90)
 		return (1);

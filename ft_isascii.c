@@ -6,15 +6,15 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:07:43 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/27 20:31:15 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:31:11 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(char a)
+int	ft_isascii(int a)
 {
-	if (a >= 0)
+	if (a >= 0 && a <= 127)
 		return (1);
 	else
 		return (0);
