@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:32:44 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/29 00:21:11 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:38:55 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 		n--;
 	}
+	if ('\0' == c)
+		return (&((char *)s)[i]);
 	return (NULL);
 }
 /*
@@ -32,7 +34,7 @@ int	main(void)
 	char	s[] = "lisboa";
 	int		c;
 
-	c = 'l';
+	c = 's';
 	puts(ft_memchr(s, c, 6));
 	return (0);
 }
