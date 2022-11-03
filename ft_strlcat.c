@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:35:49 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/27 22:56:02 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:43:01 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	n = 0;
 	dstlen = ft_strlen(dst);
 	if (size <= dstlen)
-		return (ft_strlen((char *)src) + size);
+		return (ft_strlen(src) + size);
 	while (src[n] && size - dstlen - 1 > 0)
 	{
 		dst[dstlen + n] = src[n];
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		size--;
 	}
 	dst[dstlen + n] = '\0';
-	return (dstlen + ft_strlen((char *)src));
+	return (dstlen + ft_strlen(src));
 }
 /*
 int	main(void)

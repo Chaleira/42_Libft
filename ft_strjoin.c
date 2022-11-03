@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:37:39 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/02 17:54:27 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:42:50 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	n = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	str = malloc((ft_strlen((char *)s1)) + (ft_strlen((char *)s2)) + 1);
+	str = malloc((ft_strlen(s1)) + (ft_strlen(s2)) + 1);
 	if (str == NULL)
 		return (NULL);
 	while (s1[i] != '\0')

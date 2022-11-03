@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:45:37 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/28 00:58:58 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/03 19:43:45 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 
-	i = ft_strlen((char *)s) - 1;
+	i = ft_strlen(s) - 1;
 	if (c == '\0')
 		return ((char *)&s[i + 1]);
 	while (i >= 0)

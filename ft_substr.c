@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:34:35 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/02 17:51:53 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/03 20:41:39 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char				*str;
-	size_t				i;
+	int					i;
 
 	i = 0;
 	if (!s)
 		return (NULL);
+	if (start > (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
+	if (len >= (size_t)ft_strlen(s))
+		len = ft_strlen(s) - start;
 	str = malloc(len + 1);
-	if (str == NULL)
+	if (!str)
 		return (NULL);
-	while (s && len > 0
-		&& start <= (unsigned int)ft_strlen((char *)s))
+	while (s[i] != '\0' && len > 0)
 	{
 		str[i] = s[start];
 		start++;
