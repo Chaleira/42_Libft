@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 22:13:20 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/10/28 01:07:06 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:09:22 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,34 @@
 
 char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
-	int	i;
-	int	n;
+	size_t	i;
+	size_t	n;
+	size_t	llen;
 
-	n = 0;
 	i = 0;
+	llen = ft_strlen(little);
 	if (little[0] == '\0')
 		return (((char *)big));
-	while (big[i] != '\0' && len > 0)
+	while (big[i] != '\0' && i < len - llen + 1 && len >= llen)
 	{
-		if (big[i] == little[n])
+		n = 0;
+		while (big[i + n] == little[n] && n < llen)
 		{
 			n++;
-			if (little[n] == '\0')
-				return (&((char *)big)[i - n + 1]);
 		}
-		else
-			n = 0;
+		if (n == llen)
+			return (&((char *)big)[i]);
 		i++;
-		len--;
 	}
 	return (NULL);
 }
+
 /* 
 int	main(void)
 {
-	char	str[] = "Lisboakjf,jshfisjsdboa";
-	char	str2[] = "i";
+	char	str[] = "aaabcabcd";
+	char	str2[] = "abcd";
 
-	puts(strnstr(str, str2, 2));
+	ft_strnstr(str, str2, 9);
 	return (0);
-}
- */
+} */
