@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 20:32:44 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/02 19:38:55 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/03 23:02:49 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (((char *)s)[i] && n > 0)
+	while (n > 0)
 	{
-		if (((char *)s)[i] == c)
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 			return (&((char *)s)[i]);
 		i++;
 		n--;
 	}
-	if ('\0' == c)
-		return (&((char *)s)[i]);
 	return (NULL);
 }
 /*

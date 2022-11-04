@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:56:00 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/03 20:59:42 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/04 00:04:44 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, (unsigned int)i, (len - i));
 	return (str);
 }
-/*
-int	main(void)
-{
-	const char	s1[] = "abcdefghiabc";
-	const char	set[] = "abcd";
-
-	puts(ft_strtrim(s1, set));
-	return (0);
-}
- */
