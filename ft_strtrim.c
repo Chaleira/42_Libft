@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:56:00 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/04 00:04:44 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:34:33 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	len = ft_strlen(s1);
 	if (!s1)
-		return (NULL);
-	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
+		return (0);
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (len > -1 && ft_strchr(set, s1[len - 1]))
+	while (s1 && len > -1 && ft_strchr(set, s1[len - 1]))
 		len--;
 	str = ft_substr(s1, (unsigned int)i, (len - i));
 	return (str);

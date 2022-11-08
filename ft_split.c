@@ -6,38 +6,47 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:35:43 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/08 18:43:34 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:23:08 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_words(char const *s, char c);
-
-char	**ft_split(char const *s, char c)
+static	int	ft_words(char const *s, char c)
 {
-	char		**str;
-	int			first;
-	int			last;
-	int			i;
-	int			y;
+	int	i;
+	int	size;
 
-	first = 0;
+	i = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
+			i++;
+		size = 0;
+		while (s[size] && s[size] != c)
+			size++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (i);
+}
+
+char	**new_split(char const *s, char c, int first, int last)
+{
+	char	**str;
+	int		i;
+	int		y;
+
+	i = 0;
 	y = 0;
-	if (!s)
-		return (0);
-	str = malloc((ft_words(s, c) + 1) * sizeof(char *));
-	last = ft_strlen(s) - 1;
+	str = ft_calloc((ft_words(s, c) + 1), sizeof(char *));
 	if (!str)
 		return (0);
-	while (s[first] == c)
-		first++;
-	while (s[last] == c)
-		last--;
-	i = 0;
 	while (first <= last)
 	{
-		while (s[first + i] != c)
+		while (s[first + i] && s[first + i] != c)
 			i++;
 		str[y] = ft_substr(s, first, i);
 		first = first + i;
@@ -46,106 +55,63 @@ char	**ft_split(char const *s, char c)
 			first++;
 		y++;
 	}
-	str[y] = 0;
 	return (str);
 }
 
-static	size_t	ft_words(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	n;
-	int	u;
+	int			first;
+	int			last;
+	char		**str;
 
-	u = 0;
-	i = 0;
-	n = 0;
-	while (s[u] != '\0')
-	{
-		if (s[u] != c && i == 0)
-		{
-			i = 1;
-			n++;
-		}
-		else if (s[u] == c)
-			i = 0;
-		u++;
-	}
-	return (n);
+	first = 0;
+	if (!s)
+		return (0);
+	last = ft_strlen(s) - 1;
+	while (s[first] && s[first] == c)
+		first++;
+	while (s[last] && s[last] == c)
+		last--;
+	str = new_split(s, c, first, last);
+	return (str);
 }
 /*
 int	main(void)
 {
 	char	**str;
-	int i;
 
-	i = 0;
-	str = ft_split("Tripouille", ' ');
-	while (i <= 1)
-	{
-		printf("%s\n", str[i]);
-		i++;
-	}
+	ft_words(" dsfdsfsdf", ' ');
 	return (0);
 }
 
-static int	count_words(const char *str, char c)
+char	**ft_aux(char	**str, char const *s, char c, int count)
 {
-	int i;
-	int trigger;
-
-	i = 0;
-	trigger = 0;
-	while (*str)
-	{
-		if (*str != c && trigger == 0)
-		{
-			trigger = 1;
-			i++;
-		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
-	}
-	return (i);
-}
-
-static char	*word_dup(const char *str, int start, int finish)
-{
-	char	*word;
+	int		size;
 	int		i;
+	char	*line;
 
+	size = 0;
 	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	while (start < finish)
-		word[i++] = str[start++];
-	word[i] = '\0';
-	return (word);
+	line = NULL;
+	while (*s && *s == c)
+			s++;
+	while (s[size] && s[size] != c)
+			size++;
+	if (size)
+		line = ft_calloc((size + 1), sizeof(char));
+	while (line && *s && *s != c)
+		line[i++] = *s++;
+	if (line)
+		str = ft_aux(str, s, c, count + 1);
+	else
+		str = ft_calloc((count + 1), sizeof(char *));
+	if (str)
+		str[count] = line;
+	return (str);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**split;
-
-	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
-		return (0);
-	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = word_dup(s, index, i);
-			index = -1;
-		}
-		i++;
-	}
-	split[j] = 0;
-	return (split);
+	return (ft_aux(NULL, s, c, 0));
 }
 */
