@@ -6,7 +6,7 @@
 #    By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 19:51:35 by plopes-c          #+#    #+#              #
-#    Updated: 2022/11/11 01:33:52 by plopes-c         ###   ########.fr        #
+#    Updated: 2022/11/11 19:02:41 by plopes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,9 +46,3 @@ re:				fclean $(NAME)
 
 bonus:		 	$(BONUS_OBJS)
 				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
-.PHONY:			all clean fclean re bonus
