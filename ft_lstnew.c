@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 20:23:00 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/11 01:26:31 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/11/10 23:00:57 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/11/11 01:30:39 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
+	t_list	*root;
+
+	root = malloc(sizeof(t_list));
+	if (!root)
+		return (0);
+	root->content = content;
+	root->next = NULL;
+	return (root);
 }

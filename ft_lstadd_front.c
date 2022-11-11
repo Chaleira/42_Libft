@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 20:23:00 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/11 01:26:31 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/11/11 01:32:16 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/11/11 01:53:31 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, 1);
 }
