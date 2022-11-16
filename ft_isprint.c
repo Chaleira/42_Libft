@@ -6,15 +6,15 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 23:11:56 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/02 16:34:13 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:37:27 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int a)
+int	ft_isprint(int c)
 {
-	if (a >= 32 && a <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

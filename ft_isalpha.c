@@ -6,17 +6,17 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:34:47 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/02 16:26:31 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:36:43 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int a)
+int	ft_isalpha(int c)
 {
-	if (a >= 65 && a <= 90)
+	if (c >= 65 && c <= 90)
 		return (1);
-	else if (a >= 97 && a <= 122)
+	else if (c >= 97 && c <= 122)
 		return (1);
 	else
 		return (0);

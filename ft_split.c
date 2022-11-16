@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:35:43 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/15 23:41:56 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:45:36 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ char	**new_split(char const *s, char c, int first, int last)
 	y = 0;
 	str = ft_calloc((ft_words(s, c) + 1), sizeof(char *));
 	if (!str)
-		return (0);
+	{
+		free (str);
+		return (NULL);
+	}
 	while (first <= last)
 	{
 		while (s[first + i] && s[first + i] != c)
@@ -119,4 +122,3 @@ char	**ft_split(char const	*s, char c)
 // {
 // 	return (ft_aux(NULL, s, c, 0));
 // }
-// */

@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:07:46 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/15 22:37:55 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/16 21:57:42 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <limits.h>
 
 typedef struct s_list
 {
@@ -25,13 +23,13 @@ typedef struct s_list
 }					t_list;
 
 int		ft_atoi(const char *nptr);
-void	*ft_bzero(void *s, int n);
+void	ft_bzero(void *s, int n);
 void	*ft_calloc(size_t nmemb, size_t size);
-int		ft_isalnum(int a);
-int		ft_isalpha(int a);
-int		ft_isascii(int a);
-int		ft_isdigit(int a);
-int		ft_isprint(int a);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -42,7 +40,7 @@ char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, unsigned long int size);
 size_t	ft_strlen(const char *str);
-int		ft_strncmp(const char *s1, const char *s2, size_t size);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char	*big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);

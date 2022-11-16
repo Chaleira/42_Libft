@@ -6,7 +6,7 @@
 #    By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 19:51:35 by plopes-c          #+#    #+#              #
-#    Updated: 2022/11/15 22:38:05 by plopes-c         ###   ########.fr        #
+#    Updated: 2022/11/16 20:39:25 by plopes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ OBJS			= $(SRCS:.c=.o)
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= gcc
+CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I .
+CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= libft.a
 
@@ -45,5 +45,5 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-bonus:		 	$(BONUS_OBJS)
+bonus:		 	$(BONUS_OBJS) $(OBJS)
 				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
