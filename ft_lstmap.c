@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 19:39:31 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/15 22:51:42 by plopes-c         ###   ########.fr       */
+/*   Created: 2022/11/15 22:37:06 by plopes-c          #+#    #+#             */
+/*   Updated: 2022/11/16 01:36:36 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-	char			*str;
+	t_list	*newlst;
+	t_list	*ptr;
 
-	if (!s || !f)
-		return (0);
-	i = 0;
-	str = ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (!str)
-		return (0);
-	while (s[i] != '\0')
+	ptr = NULL;
+	while (lst)
 	{
-		str[i] = f(i, s[i]);
-		i++;
+		newlst = ft_lstnew(f(lst->content));
+		if (!newlst)
+		{
+			ft_lstclear(&ptr, del);
+			return (0);
+		}
+		ft_lstadd_back(&ptr, newlst);
+		lst = lst->next;
 	}
-	return (str);
+	return (ptr);
 }

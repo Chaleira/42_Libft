@@ -6,7 +6,7 @@
 #    By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 19:51:35 by plopes-c          #+#    #+#              #
-#    Updated: 2022/11/11 19:02:41 by plopes-c         ###   ########.fr        #
+#    Updated: 2022/11/15 22:38:05 by plopes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS			=	ft_isprint.c	ft_isalnum.c	ft_memcmp.c		ft_substr.c		ft_strjoin.c	\
 					ft_toupper.c	ft_isdigit.c	ft_memchr.c		ft_memset.c		ft_striteri.c	\
 					ft_putchar_fd.c	ft_putstr_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c
 
-BONUS			=	ft_lstnew.c		ft_lstadd_front.c
+BONUS			=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	ft_lstadd_back.c	ft_lstlast.c \
+					ft_lstdelone.c	ft_lstclear.c		ft_lstiter.c	ft_lstmap.c
 	
 OBJS			= $(SRCS:.c=.o)
 

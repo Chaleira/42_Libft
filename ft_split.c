@@ -6,7 +6,7 @@
 /*   By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:35:43 by plopes-c          #+#    #+#             */
-/*   Updated: 2022/11/08 20:23:08 by plopes-c         ###   ########.fr       */
+/*   Updated: 2022/11/15 23:41:56 by plopes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**new_split(char const *s, char c, int first, int last)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const	*s, char c)
 {
 	int			first;
 	int			last;
@@ -75,43 +75,48 @@ char	**ft_split(char const *s, char c)
 	str = new_split(s, c, first, last);
 	return (str);
 }
-/*
-int	main(void)
-{
-	char	**str;
 
-	ft_words(" dsfdsfsdf", ' ');
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	**str;
+// 	int i = 0;
+// 	str = ft_split("  cc  cc   cc\0\0\0    cc   \0\0\0     \0", );
+// 	while (str[i])
+// 	{
+// 		printf("%s\n", str[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
 
-char	**ft_aux(char	**str, char const *s, char c, int count)
-{
-	int		size;
-	int		i;
-	char	*line;
+// char	**ft_aux(char	**str, char const *s, char c, int count)
+// {
+// 	int		size;
+// 	int		i;
+// 	char	*line;
 
-	size = 0;
-	i = 0;
-	line = NULL;
-	while (*s && *s == c)
-			s++;
-	while (s[size] && s[size] != c)
-			size++;
-	if (size)
-		line = ft_calloc((size + 1), sizeof(char));
-	while (line && *s && *s != c)
-		line[i++] = *s++;
-	if (line)
-		str = ft_aux(str, s, c, count + 1);
-	else
-		str = ft_calloc((count + 1), sizeof(char *));
-	if (str)
-		str[count] = line;
-	return (str);
-}
+// 	size = 0;
+// 	i = 0;
+// 	line = NULL;
+// 	while (*s && *s == c)
+// 			s++;
+// 	while (s[size] && s[size] != c)
+// 			size++;
+// 	if (size)
+// 		line = ft_calloc((size + 1), sizeof(char));
+// 	while (line && *s && *s != c)
+// 		line[i++] = *s++;
+// 	if (line)
+// 		str = ft_aux(str, s, c, count + 1);
+// 	else
+// 		str = ft_calloc((count + 1), sizeof(char *));
+// 	if (str)
+// 		str[count] = line;
+// 	return (str);
+// }
 
-char	**ft_split(char const *s, char c)
-{
-	return (ft_aux(NULL, s, c, 0));
-}
-*/
+// char	**ft_split(char const *s, char c)
+// {
+// 	return (ft_aux(NULL, s, c, 0));
+// }
+// */
