@@ -6,7 +6,7 @@
 #    By: plopes-c <plopes-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 19:51:35 by plopes-c          #+#    #+#              #
-#    Updated: 2022/11/16 20:39:25 by plopes-c         ###   ########.fr        #
+#    Updated: 2022/11/17 01:02:19 by plopes-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ OBJS			= $(SRCS:.c=.o)
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
